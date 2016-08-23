@@ -7,11 +7,11 @@ local skulls = {
 
 function onDeath(player, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
 	
-	if (player:isPlayer()) then
+	if (killer:isPlayer()) then
 		for index, pk in pairs(skulls) do
 			if (player:getSkull() == pk[1]) then
 				local x = killer:addItem(pk[2], 1)
-				x:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, "Este é o coração do "..pk[3]..": "..player:getName()..", level: ["..player:getLevel().."], derrotado pelo Player: "..killer:getName()..", level: ["..killer:getLevel().."], no dia: "..(os.date("%d")).." de "..(os.date("%B")).." de "..os.date("%Y").." ("..(os.date("%A")).."), às: "..(os.date("%X"))..".")
+				x:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, "Este Ã© o coraÃ§Ã£o do "..pk[3]..": "..player:getName()..", level: ["..player:getLevel().."], derrotado pelo Player: "..killer:getName()..", level: ["..killer:getLevel().."], no dia: "..(os.date("%d")).." de "..(os.date("%B")).." de "..os.date("%Y").." ("..(os.date("%A")).."), Ã s: "..(os.date("%X"))..".")
 			end
 		end
 	end
